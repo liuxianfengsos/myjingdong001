@@ -9,6 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.myjingdong001.util.MyImageLoader;
+import com.youth.banner.Banner;
+import com.youth.banner.Transformer;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class HomeFragment extends Fragment{
 
     private static final String ARG_SHOW_TEXT = "text";
@@ -34,10 +41,27 @@ public class HomeFragment extends Fragment{
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //FOR fragment
-        View rootView = inflater.inflate(R.layout.fragment_home,container,false);
-        TextView contentTv = rootView.findViewById(R.id.content_tv);
+        View homeView = inflater.inflate(R.layout.fragment_home,container,false);
+       // TextView contentTv = rootView.findViewById(R.id.content_tv);
        // contentTv.setText(mContentText);
-        return rootView;
+        initBanner(homeView);
+        return homeView;
+    }
+//4实现广告轮播
+    private void initBanner(View homeView) {
+        List images = new ArrayList();//创建图片结合，并存放图片
+        images.add(R.drawable.image01);
+        images.add(R.drawable.image02);
+        images.add(R.drawable.image03);
+        images.add(R.drawable.image04);
+        images.add(R.drawable.image05);
+        MyImageLoader myImageLoader = new MyImageLoader();//设置图片加载器
+        Banner banner = homeView.findViewById(R.id.banner);
+        banner.setImageLoader(myImageLoader);
+        banner.setBannerAnimation(Transformer.ZoomOutSlide);
+        banner.setDelayTime(3000);//延时3000ms
+        banner.setImages(images);//设置图片结合
+        banner.start();
     }
 
 }
