@@ -16,17 +16,12 @@ public class MyFragment extends Fragment{
     public static MyFragment newInstance(){
         MyFragment fragment = new MyFragment();
         Bundle args = new Bundle();
-       // args.putString(ARG_SHOW_TEXT,param1);
-        //fragment.setArguments(args);
         return fragment;
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       /* if (getArguments()!=null){
-            mContentText = getArguments().getString(ARG_SHOW_TEXT);
-        }*/
     }
 
     @Nullable
@@ -34,8 +29,6 @@ public class MyFragment extends Fragment{
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //FOR fragment
         View rootView = inflater.inflate(R.layout.fragment_mine,container,false);
-        //TextView contentTv = rootView.findViewById(R.id.content_tv);
-        //contentTv.setText(mContentText);
         return rootView;
     }
 

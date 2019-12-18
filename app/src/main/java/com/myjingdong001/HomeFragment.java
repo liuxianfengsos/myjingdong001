@@ -23,7 +23,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment{
-
     private static final String ARG_SHOW_TEXT = "text";
     private String mContentText;
     //返回通过工厂方法获取BlankFragment
@@ -34,7 +33,6 @@ public class HomeFragment extends Fragment{
         //fragment.setArguments(args);
         return fragment;
     }
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +40,6 @@ public class HomeFragment extends Fragment{
             mContentText = getArguments().getString(ARG_SHOW_TEXT);
         }*/
     }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -53,7 +50,6 @@ public class HomeFragment extends Fragment{
         initBanner(homeView);
         //5实现图片墙
         initGalleryJinqiu(homeView);
-
         return homeView;
     }
     //初始化 金秋风暴图片墙 的方法及参数
@@ -72,11 +68,6 @@ public class HomeFragment extends Fragment{
             }
         });
     }
-
-
-
-
-
 //4实现广告轮播
     private void initBanner(View homeView) {
         List images = new ArrayList();//创建图片结合，并存放图片
@@ -101,29 +92,24 @@ public class HomeFragment extends Fragment{
         public ImageAdapter (Context context){
             this.context = context;
         }
-
         @Override
         public int getCount() {
             return images.length;
         }
-
         @Override
         public Object getItem(int position) {
             return position;
         }
-
         @Override
         public long getItemId(int position) {
             return position;
         }
-
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             //在此最好判断一下view是否为空
             ImageView image = new ImageView(context);
             image.setImageResource(images[position]);
             image.setAdjustViewBounds(true);
-
             //设置宽高
            /*image.setLayoutParams(new Gallery.LayoutParams(
                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));*/

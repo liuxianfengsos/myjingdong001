@@ -29,7 +29,5 @@ public class UploadActivity extends AppCompatActivity{
     public void imagechange(View view){
         menuWindow = new SelectPicPopupWindow(UploadActivity.this, itemsOnClick); //显示窗口
         menuWindow.showAtLocation(UploadActivity.this.findViewById(R.id.img_upload_img), Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL, 0, 0); //设置layout在PopupWindow中显示的位置
-
     }
-
 }

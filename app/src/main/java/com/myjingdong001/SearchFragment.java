@@ -20,23 +20,15 @@ public class SearchFragment extends Fragment{
         //fragment.setArguments(args);
         return fragment;
     }
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-      /*  if (getArguments()!=null){
-            mContentText = getArguments().getString(ARG_SHOW_TEXT);
-        }*/
     }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //FOR fragment
         View searchView = inflater.inflate(R.layout.fragment_search,container,false);
-        //TextView contentTv = searchView.findViewById(R.id.search_tv);
-       // contentTv.setText("11111111");
         return searchView;
     }
-
 }

@@ -2,7 +2,10 @@ package com.myjingdong001.aboatupdate;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -15,6 +18,8 @@ import android.widget.Toast;
 
 
 import com.myjingdong001.R;
+
+import java.io.File;
 
 public class SelectPicPopupWindow extends PopupWindow {
 
@@ -45,12 +50,13 @@ public class SelectPicPopupWindow extends PopupWindow {
             @Override
         public void onClick(View v) {
                 Toast.makeText(context, "拍照", Toast.LENGTH_SHORT).show();
-
-
-               // CameraActivity ca = new CameraActivity();
-                //ca.captureStillPicture();
+                //Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                //File file = new File(Environment.getExternalStorageDirectory().getPath(),"lala.png");
+                //context.startActivityForResult(intent,1);
             }
         });
+
+
         //设置SelectPicPopupWindow的View
         this.setContentView(mMenuView); //设置SelectPicPopupWindow弹出窗体的宽
         this.setWidth(LayoutParams.FILL_PARENT); //设置SelectPicPopupWindow弹出窗体的高
